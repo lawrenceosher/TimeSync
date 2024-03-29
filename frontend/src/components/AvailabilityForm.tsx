@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 function AvailabilityForm() {
+  const [dayInput, setDayInput] = useState("");
+  const [startTimeInput, setStartTimeInput] = useState("");
+  const [endTimeInput, setEndTimeInput] = useState("");
+
+  function addAvailabilityInput() {}
+
   return (
     <>
       <form>
@@ -14,11 +22,13 @@ function AvailabilityForm() {
           <option value="Sunday">Sunday</option>
         </select>
         <label htmlFor="start-time">Choose a Start Time:</label>
-        <input type="time" />
+        <input type="time" value={startTimeInput} />
         <label htmlFor="end-time">Choose an End Time:</label>
-        <input type="time" />
+        <input type="time" value={endTimeInput} />
 
-        <button>Add Availability to Calendar</button>
+        <button onClick={addAvailabilityInput}>
+          Add Availability to Calendar
+        </button>
       </form>
     </>
   );
