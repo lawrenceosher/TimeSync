@@ -17,6 +17,8 @@ function AvailabilityForm() {
         <input type="time" />
         <label htmlFor="end-time">Choose an End Time:</label>
         <input type="time" />
+
+        <button>Add Availability to Calendar</button>
       </form>
     </>
   );
