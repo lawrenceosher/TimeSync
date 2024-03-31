@@ -18,8 +18,10 @@ function CalendarView({ availabilityList }) {
         <div className="row">
         {days.map((day) => {
           return (
-            <div className="col p-2" key={day}>
+            <div className="border rounded border-secondary col p-2" key={day}>
+
               <h3>{day}</h3>
+              <hr></hr>
               <ul className="list-group">
                 {availabilityList
                   .filter((item: any) => item.day === day)
@@ -32,6 +34,7 @@ function CalendarView({ availabilityList }) {
                     );
                   })}
               </ul>
+              
             </div>
           );
         })}
