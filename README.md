@@ -1,5 +1,7 @@
 # TimeSync
 
+Note: This code is adapted from the CS5170-GPT-React-Workshop
+
 Steps for running the code on your local machine:
 
 To install necessary software go the project root folders for both the frontend and server folders, and enter: `npm i`
