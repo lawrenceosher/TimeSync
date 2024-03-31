@@ -1,5 +1,5 @@
-import { ArrowUp } from "lucide-react";
 import { useState } from "react";
+import { ArrowUp,ArrowDown } from 'react-bootstrap-icons'; // Import the arrow icon
 
 const AvailabilityItem = ({ availability }) => {
   const [voteCount, setVoteCount] = useState(availability.votes);
@@ -8,6 +8,11 @@ const AvailabilityItem = ({ availability }) => {
     setVoteCount((prevCount: any) => {
       return prevCount + 1;
     });
+  }
+    const handleVoteDecrease = () => {
+      setVoteCount((prevCount: any) => {
+        return prevCount - 1;
+      });
     
   };
 
@@ -15,10 +20,13 @@ const AvailabilityItem = ({ availability }) => {
 
   return (
     <>
-      <li className={voteCount > 4 ? 'bg-lime-500 p-2 m-2': 'bg-lime-200 p-2 m-2'}  key={availability.id}>
+      <li className={voteCount > 4 ? 'list-group-item bg-success p-2 m-2': 'list-group-item bg-warning p-2 m-2'}  key={availability.id}>
         {availability.startTime} - {availability.endTime}: {voteCount}
         <button onClick={handleVoteIncrease}>
-          <ArrowUp />
+        <ArrowUp/>
+        </button>
+        <button onClick={handleVoteDecrease}>
+        <ArrowDown/>
         </button>
       </li>
     </>

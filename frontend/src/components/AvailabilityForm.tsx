@@ -47,7 +47,7 @@ function AvailabilityForm({ saveAvailability }) {
 
   return (
     <>
-      <form className="flex flex-col">
+      <form className="flex">
         <h2 className="font-bold">Availability Form</h2>
         <label htmlFor="day">Choose a Day:</label>
         <select id="day" value={dayInput} onChange={handleDayInputChange}>
@@ -58,22 +58,22 @@ function AvailabilityForm({ saveAvailability }) {
           <option value="Friday">Friday</option>
           <option value="Saturday">Saturday</option>
           <option value="Sunday">Sunday</option>
-        </select>
+        </select><br></br>
         <label htmlFor="start-time">Choose a Start Time:</label>
         <input
           type="time"
           value={startTimeInput}
           onChange={handleStartTimeInputChange}
-        />
+        /><br></br>
         <label htmlFor="end-time">Choose an End Time:</label>
         <input
           type="time"
           value={endTimeInput}
           onChange={handleEndTimeInputChange}
-        />
+        /><br></br>
 
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="btn btn-primary"
           type="submit"
           onClick={addAvailabilityInput}
         >

@@ -14,12 +14,13 @@ function CalendarView({ availabilityList }) {
 
   return (
     <>
-      <ul className="flex space-x-20">
+      <div className="container">
+        <div className="row">
         {days.map((day) => {
           return (
-            <li className="flex flex-col p-2" key={day}>
-              <h1>{day}</h1>
-              <ul>
+            <div className="col p-2" key={day}>
+              <h3>{day}</h3>
+              <ul className="list-group">
                 {availabilityList
                   .filter((item: any) => item.day === day)
                   .map((filteredItem: any, index: any) => {
@@ -31,10 +32,11 @@ function CalendarView({ availabilityList }) {
                     );
                   })}
               </ul>
-            </li>
+            </div>
           );
         })}
-      </ul>
+        </div>
+      </div>
     </>
   );
 }

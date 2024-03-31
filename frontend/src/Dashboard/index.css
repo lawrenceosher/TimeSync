@@ -1,0 +1,8 @@
+.flex-container {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 16px; /* Adjust margin as needed */
+  }
