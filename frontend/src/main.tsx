@@ -11,8 +11,7 @@
 // import "./index.css";
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import "bootstrap/dist/css/bootstrap.min.css" //declaring it once in the root takes care of the import for all files
+import ReactDOM from 'react-dom/client'; //declaring it once in the root takes care of the import for all files
 // import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
