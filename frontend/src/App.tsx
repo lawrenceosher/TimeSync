@@ -4,7 +4,6 @@ import logo from './logo.svg';
 import { HashRouter,Link} from 'react-router-dom';
 import {Routes,Route,Navigate} from 'react-router';
 import AI from "./AI";
-import DashboardPage from './components/DashboardPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
