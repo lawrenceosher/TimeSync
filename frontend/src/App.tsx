@@ -14,7 +14,8 @@ function App() {
   const onSaveAvailabilityHandler = (availability: any) => {
     const newAvailability = {
       ...availability,
-      voteCount: 0
+      votes: 0,
+      id: Math.random()
     };
     setTimeMappingsList((prevAvailabilities) => {
       return [...prevAvailabilities, newAvailability];

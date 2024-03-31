@@ -6,6 +6,7 @@ function AvailabilityForm({ saveAvailability }) {
   const [endTimeInput, setEndTimeInput] = useState("");
 
   const handleDayInputChange = (event: any) => {
+    console.log(event.target.value)
     setDayInput(event.target.value);
   };
 
@@ -19,13 +20,17 @@ function AvailabilityForm({ saveAvailability }) {
 
   const addAvailabilityInput = (event: any) => {
     event.preventDefault();
-    //console.log({day: dayInput, startTime: startTimeInput, endTime: endTimeInput });
+    console.log({
+      day: dayInput,
+      startTime: startTimeInput,
+      endTime: endTimeInput,
+    });
     saveAvailability({
       day: dayInput,
       startTime: startTimeInput,
       endTime: endTimeInput,
     });
-    setDayInput("");
+    setDayInput("Monday");
     setStartTimeInput("");
     setEndTimeInput("");
   };

@@ -1,4 +1,7 @@
-function CalendarView({availabilityList}) {
+import { useState } from "react";
+import AvailabilityItem from "./AvailabilityItem";
+
+function CalendarView({ availabilityList }) {
   const days = [
     "Monday",
     "Tuesday",
@@ -21,10 +24,10 @@ function CalendarView({availabilityList}) {
                   .filter((item: any) => item.day === day)
                   .map((filteredItem: any, index: any) => {
                     return (
-                      <li className="" key={index}>
-                        {filteredItem.startTime} - {filteredItem.endTime}
-                        <button>+1</button>
-                      </li>
+                      <AvailabilityItem
+                        key={index}
+                        availability={filteredItem}
+                      />
                     );
                   })}
               </ul>
