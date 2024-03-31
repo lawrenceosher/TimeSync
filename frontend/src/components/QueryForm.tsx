@@ -13,6 +13,7 @@ import {
   createParentalService,
   createExpertResponseService,
   createLikeService,
+  createPlanResponseService,
 } from "../services/backend-service";
 import ExpandableText from "./ExpandableText";
 
@@ -27,21 +28,16 @@ type FormData = z.infer<typeof schema>;
 /**
  * Formats the string in a parsable way for the GPT model on the backend
  * @param subject the subject to ask the GPT model about
- * @param modifier tone modifiers to tailor the response
  * @param additional additional info the for the model to be aware of
  * @return formated string to be sent as query to model
  */
 const formatString = (
   subject: string,
-  modifier: string,
   additional: string
 ) => {
   return (
-    "Tell me about: [" +
-    subject +
-    "], answer me with the following tones in mind: [" +
-    modifier +
-    "]" +
+    "Tell me what you may want to do as a group: [" +
+    subject + "]," +
     ", also please keep this in mind : [" +
     additional +
     "]."
@@ -72,10 +68,10 @@ const QueryForm = () => {
     setIsLoading(true); // Triggers the loading animation
 
     // Creates post request for backend gpt model
-    const { request, cancel } = createResponseService().post([
+    const { request, cancel } = createPlanResponseService().post([
       {
         role: "user",
-        content: formatString(data.subject, data.modifier, data.additional),
+        content: formatString(data.subject, data.additional),
       },
     ]);
 
@@ -99,10 +95,10 @@ const QueryForm = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {error && <p className="text-danger">{error}</p>}
-        <p>Ask me about something</p>
+        <p>Let's figure out what to do</p>
         <div className="mb-3">
           <label htmlFor="subject" className="form-label">
-            What do you want to ask me about?
+            Do you have any ideas of what you may want to do?
           </label>
           <input
             {...register("subject")}
@@ -111,18 +107,8 @@ const QueryForm = () => {
             className="form-control"
           />
 
-          <label htmlFor="modifier" className="form-label">
-            Describe the tone you want the response in:
-          </label>
-          <input
-            {...register("modifier")}
-            id="modifier"
-            type="text"
-            className="form-control"
-          />
-
           <label htmlFor="additional" className="form-label">
-            Is there anything else you want me to know about?:
+            Is there anything else you want me to know about, such as dietary or price restrictions?:
           </label>
           <input
             {...register("additional")}
