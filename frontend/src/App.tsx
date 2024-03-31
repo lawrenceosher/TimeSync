@@ -9,8 +9,8 @@ import CalendarView from "./components/CalendarView";
 function App() {
   return (
     <>
-      <h1>TimeSync</h1>
-      <div className="flex">
+      <h1 className="font-extrabold">TimeSync</h1>
+      <div className="flex space-x-16">
         <CalendarView />
         <AvailabilityForm />
       </div>

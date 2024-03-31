@@ -1,22 +1,18 @@
 import { useState, useRef } from "react";
 
 function AvailabilityForm() {
-  
-
   const [dayInput, setDayInput] = useState("");
   const [startTimeInput, setStartTimeInput] = useState("");
   const [endTimeInput, setEndTimeInput] = useState("");
 
-  const addAvailabilityInput = () => {
-    
-  }
+  const addAvailabilityInput = () => {};
 
   return (
     <>
       <form className="flex flex-col">
-        <h2>Availability Form</h2>
+        <h2 className="font-bold">Availability Form</h2>
         <label htmlFor="day">Choose a Day:</label>
-        <select id="days" name="days" value={dayInput} >
+        <select id="days" name="days" value={dayInput}>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>
@@ -30,7 +26,10 @@ function AvailabilityForm() {
         <label htmlFor="end-time">Choose an End Time:</label>
         <input type="time" value={endTimeInput} />
 
-        <button onClick={addAvailabilityInput}>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={addAvailabilityInput}
+        >
           Add Availability to Calendar
         </button>
       </form>
