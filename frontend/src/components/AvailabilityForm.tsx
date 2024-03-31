@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function AvailabilityForm() {
+  
+
   const [dayInput, setDayInput] = useState("");
   const [startTimeInput, setStartTimeInput] = useState("");
   const [endTimeInput, setEndTimeInput] = useState("");
 
-  function addAvailabilityInput() {}
+  const addAvailabilityInput = () => {
+    
+  }
 
   return (
     <>
       <form>
         <h2>Availability Form</h2>
         <label htmlFor="day">Choose a Day:</label>
-        <select id="days" name="days">
+        <select id="days" name="days" value={dayInput} >
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>

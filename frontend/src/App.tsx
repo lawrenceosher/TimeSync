@@ -8,7 +8,7 @@ import CalendarView from "./components/CalendarView";
 
 function App() {
   return (
-    <div className="">
+    <div className="flex-row">
       <h1>TimeSync</h1>
       <AvailabilityForm />
       <CalendarView />
