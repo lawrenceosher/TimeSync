@@ -15,7 +15,7 @@ const AvailabilityItem = ({ availability }) => {
 
   return (
     <>
-      <li className={voteCount > 4 ? 'bg-lime-500': 'bg-lime-200'}  key={availability.id}>
+      <li className={voteCount > 4 ? 'bg-lime-500 p-2 m-2': 'bg-lime-200 p-2 m-2'}  key={availability.id}>
         {availability.startTime} - {availability.endTime}: {voteCount}
         <button onClick={handleVoteIncrease}>
           <ArrowUp />
