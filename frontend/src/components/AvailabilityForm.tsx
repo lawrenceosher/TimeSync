@@ -1,13 +1,23 @@
 import { useState, useRef } from "react";
 
 function AvailabilityForm({ saveAvailability }) {
-  const [dayInput, setDayInput] = useState("");
+  const [dayInput, setDayInput] = useState("Monday");
   const [startTimeInput, setStartTimeInput] = useState("");
   const [endTimeInput, setEndTimeInput] = useState("");
 
   const handleDayInputChange = (event: any) => {
-    console.log(event.target.value)
+    console.log(event.target.value);
     setDayInput(event.target.value);
+  };
+
+  const handleTimeInputChange = (time) => {
+    const [hours, minutes] = time.split(":");
+    const ampm = hours >= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12; // Convert to 12-hour format
+    const formattedMinutes = minutes;
+    const formattedTime = `${formattedHours}:${formattedMinutes} ${ampm}`;
+
+    return formattedTime;
   };
 
   const handleStartTimeInputChange = (event: any) => {
@@ -27,8 +37,8 @@ function AvailabilityForm({ saveAvailability }) {
     });
     saveAvailability({
       day: dayInput,
-      startTime: startTimeInput,
-      endTime: endTimeInput,
+      startTime: handleTimeInputChange(startTimeInput),
+      endTime: handleTimeInputChange(endTimeInput),
     });
     setDayInput("Monday");
     setStartTimeInput("");

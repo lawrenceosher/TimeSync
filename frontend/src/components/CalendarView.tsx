@@ -14,10 +14,10 @@ function CalendarView({ availabilityList }) {
 
   return (
     <>
-      <ul className="flex flex-row space-x-20">
+      <ul className="flex space-x-20">
         {days.map((day) => {
           return (
-            <li className="flex flex-row p-2" key={day}>
+            <li className="flex flex-col p-2" key={day}>
               <h1>{day}</h1>
               <ul>
                 {availabilityList

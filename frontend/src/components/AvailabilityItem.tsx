@@ -8,11 +8,14 @@ const AvailabilityItem = ({ availability }) => {
     setVoteCount((prevCount: any) => {
       return prevCount + 1;
     });
+    
   };
+
+  
 
   return (
     <>
-      <li key={availability.id}>
+      <li className={voteCount > 4 ? 'bg-lime-500': 'bg-lime-200'}  key={availability.id}>
         {availability.startTime} - {availability.endTime}: {voteCount}
         <button onClick={handleVoteIncrease}>
           <ArrowUp />
