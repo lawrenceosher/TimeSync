@@ -1,14 +1,28 @@
-import "./App.css";
-
-import QueryBox from "./components/QueryBox";
-import QueryForm from "./components/QueryForm";
-import ChatRoom from "./components/ChatRoom";
-import AvailabilityForm from "./components/AvailabilityForm";
-import CalendarView from "./components/CalendarView";
-import { useState } from "react";
+import Dashboard from './Dashboard';
+import React from 'react';
+import logo from './logo.svg'; 
+import './App.css';
+import { HashRouter,Link} from 'react-router-dom';
+import {Routes,Route,Navigate} from 'react-router';
+import AI from "./AI";
 
 function App() {
+  
+  return (
+    <HashRouter>
+      <Link to="/Dashboard"> Dashboard</Link> |
+      <Link to="/AI"> AI</Link> |
 
+
+      <Routes>
+        <Route path ="/" element ={<Navigate to="/Dashboard"/>}/>
+        <Route path ="/AI" element ={<AI/>}/>
+
+        <Route path ="/Dashboard" element ={ <Dashboard/>}/>
+
+    </Routes>
+    </HashRouter>
+  )
 }
 
 export default App;
