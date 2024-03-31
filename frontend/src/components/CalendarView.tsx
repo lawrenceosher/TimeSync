@@ -17,7 +17,7 @@ function CalendarView() {
 
   return (
     <>
-      <ul>
+      <ul className="flex flex-row">
         {days.map((day) => {
           return (
             <li className="flex flex-row p-2" key={day}>

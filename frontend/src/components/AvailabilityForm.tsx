@@ -13,7 +13,7 @@ function AvailabilityForm() {
 
   return (
     <>
-      <form>
+      <form className="flex flex-col">
         <h2>Availability Form</h2>
         <label htmlFor="day">Choose a Day:</label>
         <select id="days" name="days" value={dayInput} >
