@@ -10,9 +10,6 @@ import { useState } from "react";
 import {
   // Backend model route options
   createResponseService, // Default
-  createParentalService,
-  createExpertResponseService,
-  createLikeService,
 } from "../services/backend-service";
 import ExpandableText from "./ExpandableText";
 import Like from "./Like";
@@ -69,26 +66,6 @@ const QueryBox = () => {
       });
   };
 
-  // Handles the like functionality
-  const onLike = () => {
-    // We construct post request to include the interaction history
-    const { request, cancel } = createLikeService().post([
-      { role: "user", content: query },
-      { role: "assistant", content: queryResponse },
-    ]);
-    // Request is sent
-    request
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        setError(err.message);
-        return false;
-      });
-
-    return true;
-  };
-
   // We return the react markup needed for the component
   return (
     <div>
@@ -105,7 +82,6 @@ const QueryBox = () => {
             className="form-control"
           />
           <button className="btn btn-primary">Submit</button>
-          {query && <Like color="red" onClick={onLike} />}
         </div>
         <div></div>
       </form>
