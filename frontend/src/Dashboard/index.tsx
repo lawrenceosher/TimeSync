@@ -8,6 +8,7 @@ import QueryForm from "../components/QueryForm";
 import ChatRoom from "../components/ChatRoom";
 import CalendarView from "./CalendarView";
 import AvailabilityForm from "./AvailabilityForm";
+import { Link } from "react-router-dom";
 
 function Dashboard(){
   const [timeMappingsList, setTimeMappingsList] = useState([{}]);
@@ -26,7 +27,7 @@ function Dashboard(){
   return (
     <>
       <h1 className="font-extrabold">TimeSync</h1>
-      <button className="btn btn-primary">Ask Our AI</button>
+      <Link className="btn btn-primary" to="/AI">Ask Our AI</Link>
       <div className="">
       <div className="row">
         <div className="col p-2">
