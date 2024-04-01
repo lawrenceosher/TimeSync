@@ -8,18 +8,14 @@ import QueryForm from "../components/QueryForm";
 import ChatRoom from "../components/ChatRoom";
 
 function AI(){
-  
-    return (
-      <div className="p-4">
-<h1>AI</h1>
-<div>
-      <QueryBox />
-      <br />
-      <QueryForm />
-      <br />
-      <ChatRoom />
+  return (
+    <div className="p-4">
+        {/* <QueryBox />
+        <br /> */}
+        <QueryForm />
+        <br />
+        {/* <ChatRoom /> */}
     </div>
-</div>
   );
 }
 export default AI;
