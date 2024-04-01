@@ -17,6 +17,18 @@ const PARENTAL_CONTEXT = [{"role": "user", "content": "It should be assumed you 
   "role": "assistant", "content": "Understood. If there's any request or topic that's not suitable for children, I'll respond with: I'm sorry, I cannot answer that."
 }];
 
+// This message history is injected as context to enable "parental control" in following responses
+const PLAN_CONTEXT = [
+{"role": "user", "content": 
+  "You are trying to help a group of people figure out what activities they could do together. Some possible activities could involve eating or physical activity. " +
+  "You want to make sure everyone can enjoy the activity or maybe provide an interesting experience for all. It is best to list multiple options (at least 4), for them. " +
+  "You may need to account for certain restrictions for people too, such as diets or pricing. When you respond, provide some justification for each suggestion."
+}, 
+{
+  "role": "assistant", "content": 
+  "Understood. I will try to accomodate everyone and provide some fun suggestions for activities for these people to do together"
+}];
+
 const app = express();  // Server is instantiated
 
 // These options enable us to dump json payloads and define the return signal
@@ -73,6 +85,16 @@ app.post('/expert', async (req,res) => {
 app.post('/like', async (req,res) => {
   console.log("This interaction was liked:", req.body.params.messages);
   res.send("This interaction was liked!");
+});
+
+// Gets responses from GPT model with planning responses
+app.post('/plan', async (req,res) => {
+  //console.log("REQUST:", req.body);
+  const { messages } = req.body.params;
+  const newMessages = [...PLAN_CONTEXT, ...messages];
+  console.log(newMessages);
+  const response = await getGptResonse(newMessages);
+  res.send(response.choices[0].message.content);
 });
 
 // We define the port to listen on, and do so

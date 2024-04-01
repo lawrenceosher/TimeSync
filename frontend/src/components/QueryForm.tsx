@@ -13,8 +13,10 @@ import {
   createParentalService,
   createExpertResponseService,
   createLikeService,
+  createPlanResponseService,
 } from "../services/backend-service";
 import ExpandableText from "./ExpandableText";
+import "../App.css";
 
 // This defines the schema for the form used, expand here for form input validation
 const schema = z.object({
@@ -27,21 +29,16 @@ type FormData = z.infer<typeof schema>;
 /**
  * Formats the string in a parsable way for the GPT model on the backend
  * @param subject the subject to ask the GPT model about
- * @param modifier tone modifiers to tailor the response
  * @param additional additional info the for the model to be aware of
  * @return formated string to be sent as query to model
  */
 const formatString = (
   subject: string,
-  modifier: string,
   additional: string
 ) => {
   return (
-    "Tell me about: [" +
-    subject +
-    "], answer me with the following tones in mind: [" +
-    modifier +
-    "]" +
+    "Tell me what you may want to do as a group: [" +
+    subject + "]," +
     ", also please keep this in mind : [" +
     additional +
     "]."
@@ -72,10 +69,10 @@ const QueryForm = () => {
     setIsLoading(true); // Triggers the loading animation
 
     // Creates post request for backend gpt model
-    const { request, cancel } = createResponseService().post([
+    const { request, cancel } = createPlanResponseService().post([
       {
         role: "user",
-        content: formatString(data.subject, data.modifier, data.additional),
+        content: formatString(data.subject, data.additional),
       },
     ]);
 
@@ -96,34 +93,27 @@ const QueryForm = () => {
 
   // We return the react markup needed for the component
   return (
-    <div>
+    <div id="flexRow">
       <form onSubmit={handleSubmit(onSubmit)}>
+        <h2>Answer these questions and find out some things to do while hanging out!</h2>
         {error && <p className="text-danger">{error}</p>}
-        <p>Ask me about something</p>
+        <br/>
         <div className="mb-3">
           <label htmlFor="subject" className="form-label">
-            What do you want to ask me about?
+            Do you have any ideas of what you may want to do?
           </label>
+          <br/>
           <input
             {...register("subject")}
             id="subject"
             type="text"
             className="form-control"
           />
-
-          <label htmlFor="modifier" className="form-label">
-            Describe the tone you want the response in:
-          </label>
-          <input
-            {...register("modifier")}
-            id="modifier"
-            type="text"
-            className="form-control"
-          />
-
+          <br/>
           <label htmlFor="additional" className="form-label">
-            Is there anything else you want me to know about?:
+            Is there anything else you want me to know about, such as dietary or price restrictions?
           </label>
+          <br/>
           <input
             {...register("additional")}
             id="additional"
@@ -131,11 +121,13 @@ const QueryForm = () => {
             className="form-control"
           />
         </div>
-        <button className="btn btn-primary mb-3">Submit</button>
+        <button className="btn btn-primary mb-3">Get Suggestions!</button>
       </form>
-
-      {isLoading && <div className="spinner-border"></div>}
-      <ExpandableText>{queryResponse}</ExpandableText>
+      
+      <div id="response">
+        {isLoading && <div className="spinner-border"></div>}
+        <ExpandableText>{queryResponse}</ExpandableText>
+      </div>
     </div>
   );
 };

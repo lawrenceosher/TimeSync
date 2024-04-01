@@ -4,16 +4,18 @@ import logo from './logo.svg';
 import { HashRouter,Link} from 'react-router-dom';
 import {Routes,Route,Navigate} from 'react-router';
 import AI from "./AI";
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 
 
 function App() {
   
   return (
     <HashRouter>
-      <Link to="/Dashboard"> Dashboard</Link> |
-      <Link to="/AI"> AI</Link> |
-
+      <div id="nav">
+        <Link to="/Dashboard"> Dashboard</Link> |
+        <Link to="/AI"> AI</Link>
+      </div>
 
       <Routes>
         <Route path ="/" element ={<Navigate to="/Dashboard"/>}/>

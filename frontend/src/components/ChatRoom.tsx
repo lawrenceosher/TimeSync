@@ -13,6 +13,7 @@ import {
   createParentalService,
   createExpertResponseService,
   createLikeService,
+  createPlanResponseService,
 } from "../services/backend-service";
 import "./ChatRoom.css";
 
@@ -63,7 +64,7 @@ function ChatRoom() {
 
     // console.log("PAYLOAD", payload);
     // We construct post request to include the interaction history
-    const { request, cancel } = createResponseService().post(payload);
+    const { request, cancel } = createPlanResponseService().post(payload);
 
     // Sends request
     request
@@ -83,10 +84,10 @@ function ChatRoom() {
   // We return the react markup needed for the component
   return (
     <>
-      <h1>Chat with me!</h1>
+      <h1>Plan Idea Generator</h1>
       <ul className="list-group ChatRoom">
         {messageHistory.length === 0 ? (
-          <p>Let's get started!</p>
+          <p>Let's figure out what you guys should do?</p>
         ) : (
           messageHistory.map((item, index) => (
             <li
@@ -108,7 +109,7 @@ function ChatRoom() {
       <form onSubmit={handleSubmit(onSubmit)}>
         {error && <p className="text-danger">{error}</p>}
         <label htmlFor="message" className="form-label">
-          Ask me something:
+          Give me ideas for what you may want to do and tell me any restrictions, such as diet or pricing:
         </label>
         <div className="mb-3 d-flex justify-content-between">
           <input

@@ -65,4 +65,12 @@ const createLikeService = () => {
     return new HttpService("/like");
 }
 
-export { createResponseService, createParentalService, createExpertResponseService, createLikeService };
+/**
+ * Creates a connection for dumbed down responses.
+ * @returns new HttpService object to the default response route.
+ */
+const createPlanResponseService = () => {
+    return new HttpService("/plan");
+}
+
+export { createResponseService, createParentalService, createExpertResponseService, createLikeService, createPlanResponseService };
