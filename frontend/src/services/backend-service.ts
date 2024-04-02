@@ -42,30 +42,6 @@ const createResponseService = () => {
 }
 
 /**
- * Creates a connection for parentally controlled interactions.
- * @returns new HttpService object to the parental route.
- */
-const createParentalService = () => {
-    return new HttpService("/parental");
-}
-
-/**
- * Creates a connection for gpt interactions with specific domain knowledge.
- * @returns new HttpService object to the expert route.
- */
-const createExpertResponseService = () => {
-    return new HttpService("/expert");
-}
-
-/**
- * Creates a connection for sending user "likes".
- * @returns new HttpService object to the "like" route.
- */
-const createLikeService = () => {
-    return new HttpService("/like");
-}
-
-/**
  * Creates a connection for dumbed down responses.
  * @returns new HttpService object to the default response route.
  */
@@ -73,4 +49,4 @@ const createPlanResponseService = () => {
     return new HttpService("/plan");
 }
 
-export { createResponseService, createParentalService, createExpertResponseService, createLikeService, createPlanResponseService };
+export { createResponseService, createPlanResponseService };
