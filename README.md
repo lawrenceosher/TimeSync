@@ -9,6 +9,7 @@ To install necessary software go the project root folders for both the frontend 
  Enter the server folder, and run `npm install -g nodemon`
 
  First run the server with `nodemon index.js` from the server folder.
+
 Enter your OPENAI api key in the corresponding server file.
 
 Then run the frontend with `npm run dev` from the frontend folder.
