@@ -11,6 +11,7 @@ import "./App.css";
 function App() {
   
   return (
+    //Routing that supports both the Dashboard and AI screens of the interface
     <HashRouter>
       <div id="nav">
         <Link to="/Dashboard"> Dashboard</Link> |

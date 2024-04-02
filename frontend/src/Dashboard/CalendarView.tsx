@@ -12,6 +12,8 @@ function CalendarView({ availabilityList }) {
     "Sunday",
   ];
 
+  //Using a map, filter, map approach to create the different days 
+  //and put the corresponding times underneath each category
   return (
     <>
       <div className="container">

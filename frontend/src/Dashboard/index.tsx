@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 function Dashboard(){
   const [timeMappingsList, setTimeMappingsList] = useState([{}]);
 
+  //passing the state up from the availability form so that it gets properly mapped underneath each day
   const onSaveAvailabilityHandler = (availability: any) => {
     const newAvailability = {
       ...availability,

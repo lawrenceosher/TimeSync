@@ -1,15 +1,19 @@
 import { useState, useRef } from "react";
 
+//form that users will input the days and times they are free to
 function AvailabilityForm({ saveAvailability }) {
+
+  //three separate state slices for user input
   const [dayInput, setDayInput] = useState("Monday");
   const [startTimeInput, setStartTimeInput] = useState("");
   const [endTimeInput, setEndTimeInput] = useState("");
 
+
   const handleDayInputChange = (event: any) => {
-    console.log(event.target.value);
     setDayInput(event.target.value);
   };
 
+  //converts the time into readable strings that will be displayed
   const handleTimeInputChange = (time) => {
     const [hours, minutes] = time.split(":");
     const ampm = hours >= 12 ? "PM" : "AM";
@@ -28,13 +32,10 @@ function AvailabilityForm({ saveAvailability }) {
     setEndTimeInput(event.target.value);
   };
 
+  //when button is clicked, the availabilities will be mapped underneath each of their day buckets
   const addAvailabilityInput = (event: any) => {
     event.preventDefault();
-    console.log({
-      day: dayInput,
-      startTime: startTimeInput,
-      endTime: endTimeInput,
-    });
+    
     saveAvailability({
       day: dayInput,
       startTime: handleTimeInputChange(startTimeInput),
