@@ -29,13 +29,11 @@ type FormData = z.infer<typeof schema>;
  * @param additional additional info the for the model to be aware of
  * @return formated string to be sent as query to model
  */
-const formatString = (
-  subject: string,
-  additional: string
-) => {
+const formatString = (subject: string, additional: string) => {
   return (
     "Tell me what you may want to do as a group: [" +
-    subject + "]," +
+    subject +
+    "]," +
     ", also please keep this in mind : [" +
     additional +
     "]."
@@ -92,25 +90,29 @@ const QueryForm = () => {
   return (
     <div id="flexRow">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h2>Answer these questions and find out some things to do while hanging out!</h2>
+        <h2>
+          Answer these questions and find out some things to do while hanging
+          out!
+        </h2>
         {error && <p className="text-danger">{error}</p>}
-        <br/>
+        <br />
         <div className="mb-3">
           <label htmlFor="subject" className="form-label">
             Do you have any ideas of what you may want to do?
           </label>
-          <br/>
+          <br />
           <input
             {...register("subject")}
             id="subject"
             type="text"
             className="form-control"
           />
-          <br/>
+          <br />
           <label htmlFor="additional" className="form-label">
-            Is there anything else you want me to know about, such as dietary or price restrictions?
+            Is there anything else you want me to know about, such as dietary or
+            price restrictions?
           </label>
-          <br/>
+          <br />
           <input
             {...register("additional")}
             id="additional"
@@ -120,10 +122,13 @@ const QueryForm = () => {
         </div>
         <button className="btn btn-primary mb-3">Get Suggestions!</button>
       </form>
-      
-      <div id="response">
-        {isLoading && <div className="spinner-border"></div>}
-        <ExpandableText>{queryResponse}</ExpandableText>
+
+      <div>
+        <div id="response">
+          {isLoading && <div className="spinner-border"></div>}
+          <ExpandableText>{queryResponse}</ExpandableText>
+        </div>
+        <p>Powered by OpenAI</p>
       </div>
     </div>
   );

@@ -13,7 +13,6 @@ function AI(){
         {/* <QueryBox />
         <br /> */}
         <QueryForm />
-        <br />
         {/* <ChatRoom /> */}
     </div>
   );
