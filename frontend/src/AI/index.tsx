@@ -2,18 +2,21 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import "../App.css";
 
-
 import QueryBox from "../components/QueryBox";
 import QueryForm from "../components/QueryForm";
 import ChatRoom from "../components/ChatRoom";
+import { Link } from "react-router-dom";
 
-function AI(){
+function AI() {
   return (
     <div className="p-4">
-        {/* <QueryBox />
+      {/* <QueryBox />
         <br /> */}
-        <QueryForm />
-        {/* <ChatRoom /> */}
+      <Link className="btn btn-primary" to="/Dashboard">
+        Back to Dashboard
+      </Link>
+      <QueryForm />
+      {/* <ChatRoom /> */}
     </div>
   );
 }
