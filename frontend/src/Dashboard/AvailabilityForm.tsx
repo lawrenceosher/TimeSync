@@ -2,12 +2,10 @@ import { useState, useRef } from "react";
 
 //form that users will input the days and times they are free to
 function AvailabilityForm({ saveAvailability }) {
-
   //three separate state slices for user input
   const [dayInput, setDayInput] = useState("Monday");
-  const [startTimeInput, setStartTimeInput] = useState("");
-  const [endTimeInput, setEndTimeInput] = useState("");
-
+  const [startTimeInput, setStartTimeInput] = useState("12:00");
+  const [endTimeInput, setEndTimeInput] = useState("12:00");
 
   const handleDayInputChange = (event: any) => {
     setDayInput(event.target.value);
@@ -35,7 +33,9 @@ function AvailabilityForm({ saveAvailability }) {
   //when button is clicked, the availabilities will be mapped underneath each of their day buckets
   const addAvailabilityInput = (event: any) => {
     event.preventDefault();
-    
+
+    console.log({ dayInput, startTimeInput, endTimeInput });
+
     saveAvailability({
       day: dayInput,
       startTime: handleTimeInputChange(startTimeInput),
@@ -50,7 +50,9 @@ function AvailabilityForm({ saveAvailability }) {
     <>
       <form className="flex">
         <h2 className="font-bold">Availability Form</h2>
-        <label className="p-2  mb-1" htmlFor="day">Choose a Day: </label>
+        <label className="p-2  mb-1" htmlFor="day">
+          Choose a Day:{" "}
+        </label>
         <select id="day" value={dayInput} onChange={handleDayInputChange}>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
@@ -59,19 +61,26 @@ function AvailabilityForm({ saveAvailability }) {
           <option value="Friday">Friday</option>
           <option value="Saturday">Saturday</option>
           <option value="Sunday">Sunday</option>
-        </select><br></br>
-        <label className="p-2 mb-1" htmlFor="start-time">Choose a Start Time (HH:MM AM/PM): </label>
+        </select>
+        <br></br>
+        <label className="p-2 mb-1" htmlFor="start-time">
+          Choose a Start Time (HH:MM AM/PM):{" "}
+        </label>
         <input
           type="time"
           value={startTimeInput}
           onChange={handleStartTimeInputChange}
-        /><br></br>
-        <label className="p-2 mb-1" htmlFor="end-time">Choose an End Time (HH:MM AM/PM): </label>
+        />
+        <br></br>
+        <label className="p-2 mb-1" htmlFor="end-time">
+          Choose an End Time (HH:MM AM/PM):{" "}
+        </label>
         <input
           type="time"
           value={endTimeInput}
           onChange={handleEndTimeInputChange}
-        /><br></br>
+        />
+        <br></br>
 
         <button
           className="btn btn-primary mt-2"

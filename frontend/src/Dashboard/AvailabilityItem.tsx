@@ -30,7 +30,9 @@ const AvailabilityItem = ({ availability }) => {
         }
         key={availability.id}
       >
-        {availability.startTime} - {availability.endTime}: {voteCount}
+        {availability.startTime} - {availability.endTime}
+        <br />
+        Availability Vote: {voteCount}
         <button onClick={handleVoteIncrease}>
           <ArrowUp />
         </button>

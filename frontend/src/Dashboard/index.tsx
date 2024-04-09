@@ -32,7 +32,7 @@ function Dashboard(){
         <div className="col p-2">
         <CalendarView availabilityList={timeMappingsList} />
         </div>
-        <div className="rounded border border-secondary col-md-3 p-2">
+        <div className="rounded border border-secondary col-md-3 p-2 mt-2">
         <AvailabilityForm saveAvailability={onSaveAvailabilityHandler} />
         </div>
       </div>
