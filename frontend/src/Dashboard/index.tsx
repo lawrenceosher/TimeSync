@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-
+import './index.css';
 import QueryBox from "../components/QueryBox";
 import QueryForm from "../components/QueryForm";
 import ChatRoom from "../components/ChatRoom";
@@ -41,14 +41,14 @@ function Dashboard() {
   };
 
   return (
-    <>
+    <div className="dashboard">
       <h1 className="font-extrabold">TimeSync</h1>
       <p>
         Welcome to TimeSync! You can input the availabilities of your friends
         and vote on the time that works best to hang out. Once you settle on a
         time, you can ask our AI about what to do for your hangout plans.
       </p>
-      <Link className="btn btn-primary" to="/AI">
+      <Link className="btn btn-baby-blue" to="/AI">
         Ask Our AI
       </Link>
       <div className="">
@@ -59,12 +59,12 @@ function Dashboard() {
               onDelete={onDeleteAvailabilityHandler}
             />
           </div>
-          <div className="rounded border border-secondary col-md-3 p-2 mt-2">
+          <div className="availability col-md-2 p-2 mt-2">
             <AvailabilityForm saveAvailability={onSaveAvailabilityHandler} />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Dashboard;

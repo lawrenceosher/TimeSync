@@ -6,3 +6,44 @@
     flex: 1;
     margin: 0 16px; /* Adjust margin as needed */
   }
+
+  .availability-form{
+    background-color: F5F3EE;
+    height: 100%;
+    padding-bottom: 0px;
+  }
+
+  .container{
+    height: 100%;
+  }
+  .row{
+    height: 100%;
+  }
+
+  .availability{
+    border: solid black 3px;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  form{
+    max-width: 100% !important;
+  }
+
+  .sage{
+    background-color: #87ae73;
+  }
+  .btn-baby-blue{
+    background-color: #74d0fb !important;
+    color: white;
+    outline: 2px solid white; /* Example outline color */
+
+  }
+
+  .btn-transparent:hover{
+background-color: #D0342C;
+  }
+
+  .light-yellow{
+    background-color: rgb(255, 236, 172);
+  }

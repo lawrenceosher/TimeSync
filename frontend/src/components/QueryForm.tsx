@@ -120,7 +120,7 @@ const QueryForm = () => {
             className="form-control"
           />
         </div>
-        <button className="btn btn-primary mb-3">Get Suggestions!</button>
+        <button className="btn btn-primary">Get Suggestions!</button>
       </form>
 
       <div>

@@ -24,24 +24,27 @@ const AvailabilityItem = ({ availability, handleDeleteTime }) => {
       <li
         className={
           voteCount > 4
-            ? "list-group-item bg-success p-2 m-2"
-            : "list-group-item bg-warning p-2 m-2"
+            ? "list-group-item sage p-2 m-2"
+            : "list-group-item light-yellow p-2 m-2"
             //conditional rendering for different backgrounds based on vote count
         }
         key={availability.id}
       >
-        <button onClick={() => handleDeleteTime(availability.id)}>
-          Delete
-        </button>
         {availability.startTime} - {availability.endTime}
         <br />
         Availability Vote: {voteCount}
+<div style={{display:"flex"}}>
         <button onClick={handleVoteIncrease}>
-          <ArrowUp />
+          <ArrowUp className="icons"/>
         </button>
         <button onClick={handleVoteDecrease}>
-          <ArrowDown />
+          <ArrowDown className="icons"/>
         </button>
+       
+        <button className="btn btn-transparent m-2" onClick={() => handleDeleteTime(availability.id)}>
+          X
+        </button>
+        </div>
       </li>
     </>
   );

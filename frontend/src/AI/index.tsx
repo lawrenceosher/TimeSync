@@ -9,9 +9,7 @@ import { Link } from "react-router-dom";
 
 function AI() {
   return (
-    <div className="p-4">
-      {/* <QueryBox />
-        <br /> */}
+    <div className="ai p-4">
       <Link className="btn btn-primary" to="/Dashboard">
         Back to Dashboard
       </Link>

@@ -20,7 +20,7 @@ function CalendarView({ availabilityList, onDelete }) {
         <div className="row">
         {days.map((day) => {
           return (
-            <div className="border rounded border-secondary col p-2" key={day}>
+            <div className="calendars bg-white border rounded border-secondary col p-2" key={day}>
 
               <h3>{day}</h3>
               <hr></hr>
