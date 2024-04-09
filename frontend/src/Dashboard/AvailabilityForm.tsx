@@ -34,13 +34,13 @@ function AvailabilityForm({ saveAvailability }) {
   const addAvailabilityInput = (event: any) => {
     event.preventDefault();
 
-    console.log({ dayInput, startTimeInput, endTimeInput });
-
     saveAvailability({
       day: dayInput,
       startTime: handleTimeInputChange(startTimeInput),
       endTime: handleTimeInputChange(endTimeInput),
     });
+    //setting the default values back after submission ensures that the form will never be empty and this prevents input errors
+    //this also helps with making sure users use the correct format for input
     setDayInput("Monday");
     setStartTimeInput("12:00");
     setEndTimeInput("12:00");
