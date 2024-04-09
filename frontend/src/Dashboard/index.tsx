@@ -19,19 +19,22 @@ function Dashboard() {
       id: Math.random(),
     };
     setTimeMappingsList((prevAvailabilities) => {
-      console.log(prevAvailabilities);
+
+      //sorting the availability times that get mapped so they display in chronological order instead of input order
       return [...prevAvailabilities, newAvailability].sort((a, b) => {
-        // Convert start times to comparable values
+        // convert start times to comparable values
         const timeA = new Date(`2000-01-01 ${a.startTime}`);
         const timeB = new Date(`2000-01-01 ${b.startTime}`);
 
-        // Compare start times
+        // compare start times
         return timeA - timeB;
       });
     });
   };
 
+  //users can delete the time altogether if it doesn't work or they made a mistake with their input
   const onDeleteAvailabilityHandler = (availabilityID: number) => {
+    //filtering based on the clicked availability id - ensuring that that id is no longer in the list
     setTimeMappingsList((prevAvailabilities) => {
       const keptAvailabilities = prevAvailabilities.filter(
         (filteredAvailability) => filteredAvailability.id != availabilityID
