@@ -60,13 +60,13 @@ function AvailabilityForm({ saveAvailability }) {
           <option value="Saturday">Saturday</option>
           <option value="Sunday">Sunday</option>
         </select><br></br>
-        <label className="p-2 mb-1" htmlFor="start-time">Choose a Start Time: </label>
+        <label className="p-2 mb-1" htmlFor="start-time">Choose a Start Time (HH:MM AM/PM): </label>
         <input
           type="time"
           value={startTimeInput}
           onChange={handleStartTimeInputChange}
         /><br></br>
-        <label className="p-2 mb-1" htmlFor="end-time">Choose an End Time: </label>
+        <label className="p-2 mb-1" htmlFor="end-time">Choose an End Time (HH:MM AM/PM): </label>
         <input
           type="time"
           value={endTimeInput}
@@ -74,7 +74,7 @@ function AvailabilityForm({ saveAvailability }) {
         /><br></br>
 
         <button
-          className="btn btn-primary"
+          className="btn btn-primary mt-2"
           type="submit"
           onClick={addAvailabilityInput}
         >
