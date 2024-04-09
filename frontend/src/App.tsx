@@ -13,10 +13,6 @@ function App() {
   return (
     //Routing that supports both the Dashboard and AI screens of the interface
     <HashRouter>
-      <div id="nav">
-        <Link to="/Dashboard"> Dashboard</Link> |
-        <Link to="/AI"> AI</Link>
-      </div>
 
       <Routes>
         <Route path ="/" element ={<Navigate to="/Dashboard"/>}/>
