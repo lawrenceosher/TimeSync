@@ -42,13 +42,13 @@ function AvailabilityForm({ saveAvailability }) {
       endTime: handleTimeInputChange(endTimeInput),
     });
     setDayInput("Monday");
-    setStartTimeInput("");
-    setEndTimeInput("");
+    setStartTimeInput("12:00");
+    setEndTimeInput("12:00");
   };
 
   return (
     <>
-      <form className="flex">
+      <form className="">
         <h2 className="font-bold">Availability Form</h2>
         <label className="p-2  mb-1" htmlFor="day">
           Choose a Day:{" "}
