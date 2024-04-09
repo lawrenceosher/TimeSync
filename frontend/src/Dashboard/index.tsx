@@ -31,29 +31,33 @@ function Dashboard() {
     });
   };
 
-  const compareStartTimes = (startTime1: string, startTime2: string) => {
-    let startHour1 = startTime1.substring(0, 3);
-    let startHour2 = startTime1.substring(0, 3);
-
-    let startHour1Num;
-    startHour1Num = parseInt(startHour1);
-
-    let startHour2Num;
-    startHour2Num = parseInt(startHour2);
-
-    return startHour1Num - startHour2Num;
+  const onDeleteAvailabilityHandler = (availabilityID: number) => {
+    setTimeMappingsList((prevAvailabilities) => {
+      const keptAvailabilities = prevAvailabilities.filter(
+        (filteredAvailability) => filteredAvailability.id != availabilityID
+      );
+      return [...keptAvailabilities];
+    });
   };
 
   return (
     <>
       <h1 className="font-extrabold">TimeSync</h1>
+      <p>
+        Welcome to TimeSync! You can input the availabilities of your friends
+        and vote on the time that works best to hang out. Once you settle on a
+        time, you can ask our AI about what to do for your hangout plans.
+      </p>
       <Link className="btn btn-primary" to="/AI">
         Ask Our AI
       </Link>
       <div className="">
         <div className="row">
           <div className="col p-2">
-            <CalendarView availabilityList={timeMappingsList} />
+            <CalendarView
+              availabilityList={timeMappingsList}
+              onDelete={onDeleteAvailabilityHandler}
+            />
           </div>
           <div className="rounded border border-secondary col-md-3 p-2 mt-2">
             <AvailabilityForm saveAvailability={onSaveAvailabilityHandler} />

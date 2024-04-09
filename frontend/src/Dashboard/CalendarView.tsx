@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AvailabilityItem from "./AvailabilityItem";
 
-function CalendarView({ availabilityList }) {
+function CalendarView({ availabilityList, onDelete }) {
   const days = [
     "Monday",
     "Tuesday",
@@ -32,6 +32,7 @@ function CalendarView({ availabilityList }) {
                       <AvailabilityItem
                         key={index}
                         availability={filteredItem}
+                        handleDeleteTime={onDelete}
                       />
                     );
                   })}

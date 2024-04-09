@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowUp, ArrowDown } from "react-bootstrap-icons"; // Import the arrow icon
 
 //need to have a separate class to keep track of the vote count for each of the availabilities
-const AvailabilityItem = ({ availability }) => {
+const AvailabilityItem = ({ availability, handleDeleteTime }) => {
   const [voteCount, setVoteCount] = useState(availability.votes);
 
   //increases vote by one every time button is clicked
@@ -30,6 +30,9 @@ const AvailabilityItem = ({ availability }) => {
         }
         key={availability.id}
       >
+        <button onClick={() => handleDeleteTime(availability.id)}>
+          Delete
+        </button>
         {availability.startTime} - {availability.endTime}
         <br />
         Availability Vote: {voteCount}
