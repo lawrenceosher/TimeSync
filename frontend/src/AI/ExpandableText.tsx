@@ -26,7 +26,7 @@ const ExpandableText = ({ cap = 100, children }: Props) => {
   return (
     <>
       <p>{showLess ? children.slice(0, cap) + "..." : children}</p>
-      <button className="btn btn-secondary" onClick={toggle}>
+      <button className="btn button-baby-blue" onClick={toggle}>
         {showLess ? "More" : "Less"}
       </button>
     </>

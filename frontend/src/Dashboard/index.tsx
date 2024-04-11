@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import './index.css';
-import QueryBox from "../components/QueryBox";
-import QueryForm from "../components/QueryForm";
-import ChatRoom from "../components/ChatRoom";
 import CalendarView from "./CalendarView";
 import AvailabilityForm from "./AvailabilityForm";
 import { Link } from "react-router-dom";

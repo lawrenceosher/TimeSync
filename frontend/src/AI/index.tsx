@@ -2,9 +2,7 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import "../App.css";
 
-import QueryBox from "../components/QueryBox";
-import QueryForm from "../components/QueryForm";
-import ChatRoom from "../components/ChatRoom";
+import QueryForm from "./QueryForm";
 import { Link } from "react-router-dom";
 
 function AI() {
@@ -18,7 +16,6 @@ function AI() {
         Back to Dashboard
       </Link>
       <QueryForm />
-      {/* <ChatRoom /> */}
     </div>
   );
 }
