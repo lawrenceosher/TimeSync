@@ -47,3 +47,7 @@ background-color: #D0342C;
   .light-yellow{
     background-color: rgb(255, 236, 172);
   }
+
+  .dashboard {
+    min-height: 100vh;
+  }

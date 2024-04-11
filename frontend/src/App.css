@@ -30,7 +30,7 @@ div.mb-3 {
     max-width: 100%;    
 }
 
-form {
+form.ai {
     min-height: 500px;
     padding: 5px;
     width: 45% !important;

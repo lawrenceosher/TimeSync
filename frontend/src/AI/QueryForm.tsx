@@ -89,7 +89,7 @@ const QueryForm = () => {
   // We return the react markup needed for the component
   return (
     <div id="flexRow">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="ai" onSubmit={handleSubmit(onSubmit)}>
         <h2>
           Answer these questions and find out some things to do while hanging
           out!
