@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
-
+import './index.css';
+ 
 //form that users will input the days and times they are free to
-function AvailabilityForm({ saveAvailability }) {
+function AvailabilityForm({saveAvailability}) {
   //three separate state slices for user input
   const [dayInput, setDayInput] = useState("Monday");
   const [startTimeInput, setStartTimeInput] = useState("12:00");
@@ -12,7 +13,7 @@ function AvailabilityForm({ saveAvailability }) {
   };
 
   //converts the time into readable strings that will be displayed
-  const handleTimeInputChange = (time) => {
+  const handleTimeInputChange = (time:any) => {
     const [hours, minutes] = time.split(":");
     const ampm = hours >= 12 ? "PM" : "AM";
     const formattedHours = hours % 12 || 12; // Convert to 12-hour format
@@ -48,9 +49,9 @@ function AvailabilityForm({ saveAvailability }) {
 
   return (
     <>
-      <form className="">
+      <form>
         <h2 className="font-bold">Availability Form</h2>
-        <label className="py-2 mb-1" htmlFor="day">
+        <label className="py-2" htmlFor="day">
           Choose a Day:
         </label>
         <select id="day" value={dayInput} onChange={handleDayInputChange}>
@@ -63,7 +64,7 @@ function AvailabilityForm({ saveAvailability }) {
           <option value="Sunday">Sunday</option>
         </select>
         <br></br>
-        <label className="py-2 mb-1" htmlFor="start-time">
+        <label className="py-2" htmlFor="start-time">
           Choose a Start Time (HH:MM AM/PM):{" "}
         </label>
         <input
@@ -72,7 +73,7 @@ function AvailabilityForm({ saveAvailability }) {
           onChange={handleStartTimeInputChange}
         />
         <br></br>
-        <label className="py-2 mb-1" htmlFor="end-time">
+        <label className="py-2" htmlFor="end-time">
           Choose an End Time (HH:MM AM/PM):{" "}
         </label>
         <input

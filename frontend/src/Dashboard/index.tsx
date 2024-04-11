@@ -24,7 +24,7 @@ function Dashboard() {
         const timeB = new Date(`2000-01-01 ${b.startTime}`);
 
         // compare start times
-        return timeA - timeB;
+        return timeA.getTime() - timeB.getTime();
       });
     });
   };
@@ -34,7 +34,7 @@ function Dashboard() {
     //filtering based on the clicked availability id - ensuring that that id is no longer in the list
     setTimeMappingsList((prevAvailabilities) => {
       const keptAvailabilities = prevAvailabilities.filter(
-        (filteredAvailability) => filteredAvailability.id != availabilityID
+        (filteredAvailability: any) => filteredAvailability.id != availabilityID
       );
       return [...keptAvailabilities];
     });
