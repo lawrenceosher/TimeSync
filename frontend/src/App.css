@@ -33,7 +33,7 @@ div.mb-3 {
 form {
     min-height: 500px;
     padding: 5px;
-    width: 45%;
+    width: 45% !important;
 }
 
 input {
