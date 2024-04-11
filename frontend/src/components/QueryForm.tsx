@@ -120,13 +120,14 @@ const QueryForm = () => {
             className="form-control"
           />
         </div>
-        <button className="btn btn-primary">Get Suggestions!</button>
+        <button className="btn btn-baby-blue">Get Suggestions!</button>
       </form>
 
-      <div>
+      <div style={{width:"50%"}}>
         <div id="response">
           {isLoading && <div className="spinner-border"></div>}
           <ExpandableText>{queryResponse}</ExpandableText>
+          
         </div>
         <p>Powered by OpenAI</p>
       </div>

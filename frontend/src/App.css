@@ -18,9 +18,9 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
     width: 95%;
-    gap: 20px;
-    margin: auto;
+    gap: 50px;
     align-content: center;
+    margin-top: 25px;
 }
 
 div.mb-3 {
@@ -36,7 +36,7 @@ form {
     min-height: 500px;
     padding: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    max-width: 45%;
+    width: 45%;
 }
 
 input {
@@ -45,7 +45,14 @@ input {
     border: none;
 }
 
-button.mb-3 {
+.btn-baby-blue{
+    background-color: #74d0fb !important;
+    color: white;
+    outline: 2px solid white; /* Example outline color */
+
+  }
+
+/* button.mb-3 {
     background-color: #d9dde9;
     border: none;
     border-radius: 10px;
@@ -54,17 +61,19 @@ button.mb-3 {
     margin-top: 15px;
     filter:drop-shadow(2px 2px 2px #a6abbc)
     
-}
+} */
 
 .text-danger {
     color: red;
 }
 
 #response {
-    width: 50%;
-    min-height: 500px;
+    width: 100%;
+    min-height: 400px;
     padding: 5px;
     background-color: white;
+    border-radius: 10px;
+    border: solid black 2px;
 }
 
 ExpandableText {
@@ -78,4 +87,6 @@ ExpandableText {
 }
 .ai{
     background-color: #F5F3EE;
+    min-height: 100vh;
+    padding: 20px;
 }
