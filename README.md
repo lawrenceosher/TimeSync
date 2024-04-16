@@ -1,6 +1,7 @@
 # TimeSync
 
-Note: This code is adapted from the CS5170-GPT-React-Workshop
+Note: This code is adapted from the CS5170-GPT-React-Workshop from Christopher Curtis
+Link: https://github.com/CurtisChris7/CS5170-GPT-React-Workshop
 
 Steps for running the code on your local machine:
 
