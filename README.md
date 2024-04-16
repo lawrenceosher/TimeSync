@@ -1,5 +1,7 @@
 # TimeSync
 
+Link to Final Presentation: https://docs.google.com/presentation/d/14BGnd4kegumJHwiqvcCitN-fsqsLbOLsKKT67OzcZ9E/edit?usp=sharing
+
 Note: This code is adapted from the CS5170-GPT-React-Workshop from Christopher Curtis
 Link: https://github.com/CurtisChris7/CS5170-GPT-React-Workshop
 
