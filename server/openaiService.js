@@ -7,7 +7,7 @@ import OpenAI from 'openai';
 
 // Creates an OpenAI connection using the provided api key
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "INSERT API KEY HERE"
 });
 
 
